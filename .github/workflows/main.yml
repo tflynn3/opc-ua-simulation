@@ -16,7 +16,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Change something
         run: |
-          find . -type f -name "*.md" -print0 | xargs -0 sed -i "s/foo/bar/g"
+          find . -type f -name "readme.md" -print0 | xargs -0 sed -i '1s/.*/&'"$(date +%d%m%Y%H%M%S)"'/'
       - name: Commit and push changes
         uses: devops-infra/action-commit-push@master
         with:
