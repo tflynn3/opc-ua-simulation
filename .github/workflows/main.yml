@@ -2,7 +2,7 @@ name: Push button
 on:
   repository_dispatch
 permissions:
-  contents: read
+  contents: write
   issues: write
 jobs:
   change-and-push:
