@@ -8,12 +8,12 @@ jobs:
   change-and-push:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
       - name: create an issue
         uses: JasonEtco/create-an-issue@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Checkout repository
-        uses: actions/checkout@v2
       - name: Change something
         run: |
           find . -type f -name "*.md" -print0 | xargs -0 sed -i "s/foo/bar/g"
