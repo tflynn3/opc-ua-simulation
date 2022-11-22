@@ -1,6 +1,6 @@
 name: Push button
 on:
-  push
+  repository_dispatch
 jobs:
   change-and-push:
     runs-on: ubuntu-latest
